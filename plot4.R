@@ -9,7 +9,7 @@ plotDat <- subset(dat, Date >= as.Date("2007-02-01") & Date <= as.Date("2007-02-
 
 png("plot4.png")
 par(mar = c(5, 5, 3, 3), mfrow = c(2,2))
-hist(plotDat$Global_active_power, xlab = "Global Active Power (kilowatts)", main = "Global Active Power", col = "red")
+with(plotDat, plot(DateTime, Global_active_power, type = "l", main = "", xlab = "", ylab = "Global Active Power (kilowatts)"))
 with(plotDat, {
   plot(DateTime, Voltage, type = "l", main = "")
 })
